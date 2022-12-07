@@ -1,0 +1,90 @@
+% Metódy inžinierskej práce
+
+\documentclass[10pt,twoside,slovak,a4paper]{article}
+
+\usepackage[slovak]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url} % príkaz \url na formátovanie URL
+\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+
+\usepackage{cite}
+%\usepackage{times}
+
+\pagestyle{headings}
+
+\title{Adaptívna personalizovaná gamifikácia vo vzdelávacích prostrediach\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2022/23, vedenie: Ing. Fedor Lehocki, PhD}} % meno a priezvisko vyučujúceho na cvičeniach
+
+\author{Daniel Štilec\\[2pt]
+	{\small Slovenská technická univerzita v Bratislave}\\
+	{\small Fakulta informatiky a informačných technológií}\\
+	{\small \texttt{xstilec@stuba.sk}}
+	}
+
+\date{\small 30. september 2022} % upravte
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Gamifikácia je trend, ktorý sa zaoberá aplikáciou herných prvkov napríklad do vzdelávacích prostredí so záujmom zvýšenia produktivity používateľa. Cieľom gamifikácie je zabaviť, motivovať, ale hlavne naučiť. Avšak je vždy gamifikácia účinná? Nie každý herný prvok môže byť vhodný pre daného používateľa a to môže viesť k strate motivácie do vzdelávania. Nasledujúci článok sa bude zaoberať pojmom personalizovaná gamifikácia a ako implementovať umelú inteligenciu do vzdelávacích aplikácií s cieľom zvýšenia motivácie a produktivity používateľov.
+\end{abstract}
+
+
+\section{Personalizácia} \label{personalizacia}
+
+%\centering
+%\includegraphics[scale=1.0]{diagram.pdf}
+	Personalizácia je pojem, ktorý v modernom svete stále nie je tak populárny ako by mal byť. Slovenské školy, či už je to základná, stredná alebo vysoká škola, uprednostňujú rovnaký spôsob vzdelávania. Stanovené učebné plány a rozvrhy nemusia sedieť každému. Samozrejme, existujú úľavy pre študentov a žiakov s rôznymi disfunkciami, ale to neznamená, že škola je personalizovaná a adaptuje sa študentom. Hlavným znakom personalizovaného vzdelávania je postavenie sa ku každému osobitne.
+
+\subsection{Personalizovaná gamifikácia} \label{personalizacia:gamifikacia}
+
+	Existuje spôsob ako by sa študenti mohli zlepšovať vo svojich záujmoch, ako by mohli zostať stále motivovaní, pretože to patrí medzi najdôležitejšie atribúty vzdelávania. Personalizovaná gamifikácia skúma potreby a chovanie sa používateľa s výsledkom prispôsobenia herných prvkov jednotlivcom. Napríklad niektoré vzdelávacie aplikácie by mohli zmeniť sadu herných prvkov A na sadu prvkov B ak sú používatelia ženy, pretože ženám nemusí vždy vyhovovať to, čo mužom. V skratke, ľudia z rôznych štátov, etnických skupín, spoločností, ktorí majú rozličné charakteristiky sú motivovaní odlišne a preto by gamifikované systémy mali byť špecificky prispôsobené rôznym používateľom aby gamifikácia naplno využila svoj potenciál. 
+
+
+\section{Aplikácie s využitím personalizovanej gamifikácie} \label{aplikacie}
+
+\subsection{Duolingo} \label{aplikacie:duolingo}
+
+Duolingo je bezplatná aplikácia, ktorá pomáha naučiť sa cudzí jazyk alebo sa v ňom zdokonaliť. Používa jedinečný adaptívny systém, ktorý sleduje úroveň znalostí každého jednotlivca. Taktiež zbiera infomácie o slovách ktoré môžu byť tažšie zapamätateľné a tieto informácie posúva ďalším používateľom. Duolingo myslí aj na možnosť, keď používateľ môže po čase niečo zabudnuť a tak mu danú časť výčby môže zopakovať. \cite{duolingo}
+
+\subsection{Knewton} \label{aplikacie:knewton}
+
+Knewton je vzdelávací systém zameraný na poskytovanie individualizovaného a neustále sa prispôsobujúceho prostredia a zároveň poskytuje okamžitú spätnú väzbu, gamifikačné komponenty a sociálnu zložku, kde môžu študenti spolupracovať. Systém je vytvorený implementáciou niekoľkých výkonných matematických modelov, ako je teória odozvy na položky, Bayesovské siete, Markovove modely a klastrovacie algoritmy. Všetky tieto metódy sa používajú na hodnotenie vedomostí študentov, vytváranie personalizovaných ciest a hľadanie vzorov v skupinách študentov
+
+\section{Výskum}
+
+Tento článok vychádza z výskumu\cite{adaptiveGamification}, ktorý bol smerovaný na skupinu vysokoškolákov, ktorý navštevujú kurzy vývoja internetových stránok. Na základe toho výskumu sa zistilo, že je potrebné vytvoriť vzdelávacie prostredie, ktoré je jednoduché na používanie, kde používatelia majú voľnosť a priestor na chyby počas vzdelávania. Taktiež bolo pre túto skupinu ľudí dôležité aby systém obsahoval bodovanie výkonu používateľa.
+
+Na základe týchto informácii je nutné aby systém obsahoval nasledovné: 
+ \begin{itemize}
+\item jednoduché a pochopiteľné rozhranie
+\item jasne definovaný obsah vzdelávania
+\item výber obtiažnosti
+\item opätovné použitie otázok na zistenie vedomostí
+\item herné prvky - úrovne, počítadlo bodov \cite{duolingo}
+\item kompatibilita s mobilným zariadením
+\end{itemize}
+
+Hlavnou vlastnosoťu, čo systém potrebuje obsahovať je adaptivita. Implemetnáciou opätovného použitia testovacích otázoch sa docieli zber informácií o aktuálnom leveli vedomostí, ktoré budú neskôr použité na výber testovacích otázok. Opätovné použitie otázky je spôsob, akým systém reaguje na používateľa po nesprávnej alebo správnej odpovedi, pričom je prezentovaná rovnaká otázka s rôznym výberom odpovedí.
+
+%\section{Ešte dôležitejšia časť} \label{dolezitejsia}
+
+
+
+
+%\section{Záver} \label{zaver} % prípadne iný variant názvu
+
+
+
+%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
+
+% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
+\bibliography{lit}
+\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\end{document}
